@@ -4,7 +4,7 @@ _This is a project done by 3 Year-1 students from Ngee Ann Polytechnic as part o
 
 MOCHII EDU is an interactive educational game site that motivates students to learn while playing games. You can be anywhere in the world, on any smart devices and still be able to learn with MOCHII EDU!
 
-Click [**HERE**](https://sbboxs.github.io/ID_Assignment-2/) to view our website.
+Click [**HERE**](https://ubertronian04.github.io/ID_Assignment-2/) to view our website.
 
 <hr>
 
