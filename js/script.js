@@ -1,43 +1,46 @@
-// When user is logged in
-if(sessionStorage.getItem("username") != null) {
-    $(".login-signup-btns").empty();
-    // Profile pic and username in all navbar
-    $(".login-signup-btns").html(`
-    <li class="nav-item">
-        <p style="padding-top: 0.8rem;">Welcome <span id="currentUser"></span>
-    </li>
-    <li class="nav-item p-0 m-0">
-        <div class="dropdown">
-            <button type="button" class="btn btn-primary text-muted" data-bs-toggle="dropdown" style="background-color:transparent;">
-                <img src="./assets/user_display_picture/profile.jpg" style="height: 4rem; border-radius: 75%;">
-            </button>
-            <div class="dropdown-menu class-dropdown-options">
-                <a class="dropdown-item-text text-decoration-none logout-btn">Log Out</a>
+$(document).ready(function(){
+    // When user is logged in
+    if(sessionStorage.getItem("username") != null) {
+        $(".login-signup-btns").empty();
+        // Profile pic and username in all navbar
+        $(".login-signup-btns").html(`
+        <li class="nav-item">
+            <p style="padding-top: 0.8rem;">Welcome <span id="currentUser"></span>
+        </li>
+        <li class="nav-item p-0 m-0">
+            <div class="dropdown">
+                <button type="button" class="btn btn-primary text-muted" data-bs-toggle="dropdown" style="background-color:transparent;">
+                    <img src="./assets/user_display_picture/profile.jpg" style="height: 4rem; border-radius: 75%;">
+                </button>
+                <div class="dropdown-menu class-dropdown-options">
+                    <a class="dropdown-item-text text-decoration-none logout-btn">Log Out</a>
+                </div>
             </div>
-        </div>
-    </li>`);
-    $(".login-signup-btns").addClass("d-flex align-items-center");
-    $(".dropdown-item-text").hover(function(){
-        $(this).css("cursor", "pointer");
-    });
-    $("#currentUser").text(sessionStorage.getItem("username"));
+        </li>`);
+        $(".login-signup-btns").addClass("d-flex align-items-center");
+        $(".dropdown-item-text").hover(function(){
+            $(this).css("cursor", "pointer");
+        });
+        $("#currentUser").text(sessionStorage.getItem("username"));
 
-    $(document).on("click", ".logout-btn", function(){
-        sessionStorage.removeItem("username");
-        location.reload();
-    });
-}
-// Displaying locked features modal on game pages
-else if(location.href.includes("quizgame") || location.href.includes("wordle") || location.href.includes("science") || location.href.includes("Science")){
-    $(".modal").attr("id", "lockedModal");
-    $(".modal-header button").remove();
-    $(".modal-body").html(`
-    <p class="text-center" style="font-family:Verdana, Geneva, Tahoma, sans-serif;">Please <a class="login-link-btn">Login</a> to access this feature. If you don't have an existing account, <a class="register-link-btn">Register</a> yourself now!</p>
-    <p class="text-center" style="font-family:Verdana, Geneva, Tahoma, sans-serif;">Click <a class="home-link-btn" href="index.html">here</a> to return to the home page</p>`);
-    $("#modal-title").text("! Locked Feature !");
-    $(".modal").modal({backdrop: "static", keyboard: false});
-    $(".modal").modal("toggle");
-}
+        $(document).on("click", ".logout-btn", function(){
+            sessionStorage.removeItem("username");
+            location.reload();
+        });
+    }
+    // Displaying locked features modal on game pages
+    else if(location.href.includes("quizgame") || location.href.includes("wordle") || location.href.includes("science") || location.href.includes("Science")){
+        $(".modal").attr("id", "lockedModal");
+        $(".modal-header button").remove();
+        $(".modal-body").html(`
+        <p class="text-center" style="font-family:Verdana, Geneva, Tahoma, sans-serif;">Please <a class="login-link-btn">Login</a> to access this feature. If you don't have an existing account, <a class="register-link-btn">Register</a> yourself now!</p>
+        <p class="text-center" style="font-family:Verdana, Geneva, Tahoma, sans-serif;">Click <a class="home-link-btn" href="index.html">here</a> to return to the home page</p>`);
+        $("#modal-title").text("! Locked Feature !");
+        $(".modal").modal({backdrop: "static", keyboard: false});
+        $(".modal").modal("toggle");
+    }
+});
+
 
 // Enabling login button
 $("#loginBtn, .login-link-btn").on("click", function (e) {
