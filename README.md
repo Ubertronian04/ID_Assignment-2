@@ -13,7 +13,7 @@ Click [**HERE**](https://ubertronian04.github.io/ID_Assignment-2/) to view our w
 <details>
 <summary>Emily • Front-End Developer</summary>
 
-[GitHub](https://github.com/510227383) | [Stack Overflow](https://stackoverflow.com/users/18219125/emily) | [Socials](https://remiinants.carrd.co/)
+[GitHub](https://github.com/510227383) | [Stack Overflow](https://stackoverflow.com/users/18219125/emily) | 
 
 </details>
 
